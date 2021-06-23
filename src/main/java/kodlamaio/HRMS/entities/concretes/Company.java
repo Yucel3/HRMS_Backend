@@ -26,18 +26,13 @@ import lombok.NoArgsConstructor;
 @Table(name = "companies")
 public class Company extends User{
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "company_id")
-	private int id;
-	
 	@NotNull
 	@Column(name = "name")
 	private String companyName;
 	
 	@NotNull
 	@Column(name = "web_adress" )
-	private String companyWebSite;
+	private String companyWebAdress;
 	
 	@OneToMany(mappedBy = "companyId")
 	private List<JobTitle> jobtitles;

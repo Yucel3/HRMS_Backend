@@ -32,7 +32,7 @@ public class cvController {
 	}
 
 	@PostMapping("/add")
-	private Result add(@RequestBody CvDto cv) {
+	private Result add(@RequestBody Cv cv) {
 		return this.cvService.add(cv);
 	}
 

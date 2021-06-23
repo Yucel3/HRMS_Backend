@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -23,6 +24,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "jobtitles")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+
 public class JobTitle {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

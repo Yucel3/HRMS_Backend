@@ -40,7 +40,5 @@ public class City {
 	@OneToMany(mappedBy = "cityId")
 	private List<School> schools;
 
-	@OneToMany(mappedBy = "cityId")
-	private List<Cv> cvs;
 
 }

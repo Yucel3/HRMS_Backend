@@ -34,7 +34,7 @@ public class PositionManager implements PositionService {
 
 	@Override
 	public Result add(PositionDto jobPosition) {
-		this.positionDao.save((Position) modelMapperService.dtoToEntity(jobPosition, PositionDto.class));
+		this.positionDao.save((Position) modelMapperService.dtoToEntity(jobPosition, Position.class));
 		return new SuccessResult("pozisyon kayedildi");
 	}
 

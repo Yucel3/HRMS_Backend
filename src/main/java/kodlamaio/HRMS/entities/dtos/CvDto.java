@@ -11,6 +11,4 @@ public class CvDto {
 	private String schoolName;
 	private String cityName;
 	private String languageName;
-	private String github;
-	private String likedIn;
 }

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -19,34 +20,27 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 @Table(name = "candidates")
 public class Candidate extends User {
 
 	@NotNull
 	@Column(name = "first_name")
-	private String FirstName;
-	
+	private String firstName;
+
 	@NotNull
 	@Column(name = "last_name")
-	private String LastName;
-	
+	private String lastName;
+
 	@NotNull
 	@Column(name = "nationality_id", unique = true)
-	private String NationalityId;
+	private String nationalityId;
 
 	@NotNull
 	@Column(name = "birth_year")
-	private int DateOfYear;
-	
-	@Column(name = "cv_id")
-	private int cvId;
-	
+	private int birthYear;
 
-	@Column(name = "position_id")
-	private int jobPositionId;
-	
-	@OneToMany(mappedBy = "candidateId")
-	private List<Cv> cvc;
-
+	@OneToMany(mappedBy = "candidate")
+	private List<Cv> cv;
 
 }

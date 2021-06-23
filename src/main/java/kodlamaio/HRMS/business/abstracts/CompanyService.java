@@ -4,10 +4,11 @@ import java.util.List;
 
 import kodlamaio.HRMS.core.untilities.result.DataResult;
 import kodlamaio.HRMS.core.untilities.result.Result;
-import kodlamaio.HRMS.entities.concretes.Company;
+import kodlamaio.HRMS.entities.dtos.CompanyAddDto;
+import kodlamaio.HRMS.entities.dtos.CompanyDto;
 
 
 public interface CompanyService {
-	DataResult<List<Company>> getAll();
-	Result add(Company company);
+	DataResult<List<CompanyDto>> getAll();
+	Result add(CompanyAddDto company);
 }

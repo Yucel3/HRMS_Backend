@@ -9,7 +9,7 @@ import kodlamaio.HRMS.entities.dtos.CvDto;
 
 public interface CvService {
 	DataResult<List<Cv>> getAll();
-	Result add(CvDto cv);
+	Result add(Cv cv);
 
 
 }

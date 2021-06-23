@@ -1,8 +1,8 @@
 package kodlamaio.HRMS.adapter;
 
 
-import kodlamaio.HRMS.entities.concretes.Candidate;
+import kodlamaio.HRMS.entities.dtos.CandidateAddDto;
 public interface MernisService {
-	boolean ifRealCandidate(Candidate candidate);
+	boolean ifRealCandidate(CandidateAddDto candidate);
 
 }

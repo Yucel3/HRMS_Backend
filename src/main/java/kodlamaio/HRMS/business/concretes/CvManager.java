@@ -35,10 +35,11 @@ public class CvManager implements CvService {
 	}
 
 	@Override
-	public Result add(CvDto cv) {
-
-		this.cvDao.save((Cv) modelMapperService.dtoToEntity(cv, CvDto.class));
-		return new SuccessResult("kayıt başarılı");
+	public Result add(Cv cv) {
+		this.cvDao.save(cv);
+		return new SuccessResult();
 	}
+
+	
 
 }

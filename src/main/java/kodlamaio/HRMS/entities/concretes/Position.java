@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -35,8 +37,11 @@ public class Position {
 	@OneToMany(mappedBy = "positionId")
 	private List<JobTitle> jobtitles;
 	
-	@OneToMany(mappedBy = "positionId")
-	private List<Cv> cvs;
+	@ManyToOne
+	@JoinColumn(name = "position")
+	private Cv cv;
+	
+	
 	
 	@OneToMany(mappedBy = "position")
 	private List<PreviousJob> jobs;
